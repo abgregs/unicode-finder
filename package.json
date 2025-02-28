@@ -1,5 +1,6 @@
 {
   "name": "unicode-finder",
+  "homepage": "https://abgregs.github.io/unicode-finder",
   "private": true,
   "version": "0.0.0",
   "type": "module",
