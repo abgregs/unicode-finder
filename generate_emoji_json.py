@@ -55,7 +55,7 @@ def generate_emoji_json():
 
 # Generate and save the JSON file
 emoji_json = generate_emoji_json()
-with open('emoji_data.json', 'w', encoding='utf-8') as f:
+with open('public/emoji_data.json', 'w', encoding='utf-8') as f:
     f.write(emoji_json)
 
 print("Emoji data has been saved to emoji_data.json")
