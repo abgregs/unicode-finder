@@ -150,10 +150,7 @@ function App() {
                   >
                     <div className='absolute top-2 right-2 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100'>
                       {copiedEmoji === emoji.character ? (
-                        <ClipboardCheck
-                          className='text-accent/80 size-5'
-                          aria-label={`Copied ${emoji.character} to clipboard!`}
-                        />
+                        <ClipboardCheck className='text-accent/80 size-5' />
                       ) : (
                         <Clipboard className='text-accent/80 size-5' />
                       )}
