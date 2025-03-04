@@ -183,6 +183,25 @@ function App() {
           </div>
         )}
       </main>
+      <footer className='text-muted-foreground mx-auto mt-auto py-12'>
+        <div className='max-w-xl px-4 text-center text-sm sm:px-6 lg:px-8'>
+          This website shows native browser images for unicode emojis based on
+          publicly available data from{' '}
+          <Button
+            className='hover:text-accent/80 text-accent/80 -m-1 p-1'
+            variant='link'
+            asChild
+          >
+            <a
+              href='https://unicode.org/emoji/charts/full-emoji-list.html'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Unicode.org
+            </a>
+          </Button>
+        </div>
+      </footer>
     </div>
   )
 }
