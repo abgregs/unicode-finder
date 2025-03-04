@@ -12,6 +12,7 @@ import {
 } from './components/ui/card'
 import { Toaster } from './components/ui/sonner'
 import { toast } from 'sonner'
+import { useDebounceCallback } from 'usehooks-ts'
 
 type Emoji = {
   character: string
@@ -26,9 +27,13 @@ type EmojiData = {
 
 function App() {
   const [emojiData, setEmojiData] = useState<Emoji[]>([])
-  const [searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState<string>('')
   const [isLoading, setIsLoading] = useState(true)
   const [copiedEmoji, setCopiedEmoji] = useState<string | null>(null)
+
+  const debouncedSearchTerm = useDebounceCallback(setSearchTerm, 500, {
+    maxWait: 1200
+  })
 
   const searchInputRef = useRef<HTMLInputElement>(null)
 
@@ -92,8 +97,8 @@ function App() {
               type='search'
               className='h-12 rounded-full pr-12 pl-12'
               placeholder='Emoji search'
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              defaultValue={searchTerm}
+              onChange={(e) => debouncedSearchTerm(e.target.value)}
             />
             {searchTerm && (
               <div className='absolute inset-y-0 right-3 z-10 flex items-center'>
@@ -106,8 +111,10 @@ function App() {
                     'focus-visible:ring-offset-0'
                   )}
                   onClick={() => {
-                    searchInputRef.current?.focus()
                     setSearchTerm('')
+                    searchInputRef.current?.focus()
+                    if (searchInputRef.current)
+                      searchInputRef.current.value = ''
                   }}
                   aria-label='Clear search'
                 >
