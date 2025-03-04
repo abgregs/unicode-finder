@@ -1,0 +1,74 @@
+/* Customization of shadcn colors using Tailwind theme colors */
+:root {
+  /* Tailwind colors in HSL format */
+  /* Slate colors */
+  --slate-50: hsl(210 40% 98%);
+  --slate-100: hsl(210 40% 96);
+  --slate-200: hsl(214 32% 91%);
+  --slate-300: hsl(213 27% 84%);
+  --slate-400: hsl(215 20% 65%);
+  --slate-500: hsl(215 16% 47%);
+  --slate-600: hsl(215 19% 35%);
+  --slate-700: hsl(215 25% 27%);
+  --slate-800: hsl(217 33% 17%);
+  --slate-900: hsl(222 47% 11%);
+  --slate-950: hsl(229 84% 5%);
+
+  /* Purple colors */
+  --purple-50: hsl(270 100% 98%);
+  --purple-100: hsl(269 100% 95%);
+  --purple-200: hsl(269 100% 91%);
+  --purple-300: hsl(269 97% 85%);
+  --purple-400: hsl(270 95% 75%);
+  --purple-500: hsl(271 91% 65%);
+  --purple-600: hsl(271 81% 56%);
+  --purple-700: hsl(272 72% 47%);
+  --purple-800: hsl(273 67% 39%);
+  --purple-900: hsl(274 66% 32%);
+  --purple-950: hsl(274 90% 16%);
+
+  /* Rose colors */
+  --rose-50: hsl(355 100% 97%);
+  --rose-100: hsl(355 100% 95%);
+  --rose-200: hsl(352 96% 90%);
+  --rose-300: hsl(352 96% 82%);
+  --rose-400: hsl(351 95% 71%);
+  --rose-500: hsl(350 89% 60%);
+  --rose-600: hsl(347 77% 50%);
+  --rose-700: hsl(345 83% 41%);
+  --rose-800: hsl(343 80% 35%);
+  --rose-900: hsl(342 75% 30%);
+  --rose-950: hsl(343 88% 16%);
+}
+
+:root {
+  /* Dark theme only */
+  --background: var(--slate-950);
+  --foreground: var(--slate-100);
+
+  --muted: var(--slate-700);
+  --muted-foreground: var(--slate-400);
+
+  --popover: var(--slate-950);
+  --popover-foreground: var(--slate-100);
+
+  --card: var(--slate-900);
+  --card-foreground: var(--slate-100);
+
+  --border: var(--slate-800);
+  --input: var(--slate-100);
+
+  --primary: var(--slate-100);
+  --primary-foreground: var(--slate-900);
+
+  --secondary: var(--slate-200);
+  --secondary-foreground: var(--slate-800);
+
+  --accent: var(--purple-200);
+  --accent-foreground: var(--slate-950);
+
+  --destructive: var(--rose-600);
+  --destructive-foreground: var(--rose-300);
+
+  --ring: var(--purple-200);
+}

@@ -13,6 +13,8 @@ const Toaster = ({ ...props }: ToasterProps) => {
           toast:
             'group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg',
           description: 'group-[.toast]:text-muted-foreground',
+          content: 'flex w-full items-center justify-center',
+          title: 'text-lg',
           actionButton:
             'group-[.toast]:bg-primary group-[.toast]:text-primary-foreground font-medium',
           cancelButton:
