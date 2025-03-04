@@ -85,7 +85,9 @@ function App() {
       <main className='container mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8'>
         {/* Header */}
         <header className='mb-12 flex flex-col items-center'>
-          <h1 className='mb-8 text-4xl font-bold'>Unicode Emoji Finder</h1>
+          <h1 className='mb-8 text-center text-4xl font-bold'>
+            Unicode Emoji Finder
+          </h1>
 
           {/* Search Bar */}
           <div className='relative w-full max-w-md'>
