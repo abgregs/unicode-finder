@@ -53,20 +53,40 @@ function App() {
       })
   }, [])
 
-  const filteredEmojis = useMemo(
-    () =>
-      emojiData.filter((emoji) => {
-        const searchLower = searchTerm.toLowerCase()
-        return (
-          emoji.character.includes(searchTerm) ||
-          emoji.name.toLowerCase().includes(searchLower) ||
-          emoji.keywords.some((keyword) =>
-            keyword.toLowerCase().includes(searchLower)
-          )
-        )
-      }),
-    [searchTerm, emojiData]
-  )
+  // Parse search terms and match each term against emoji keywords
+  const filteredEmojis = useMemo(() => {
+    if (!searchTerm.trim()) {
+      return emojiData // Return all emojis if search is empty
+    }
+
+    // Parse search terms, splitting by common separators and removing empty terms
+    const searchTerms = searchTerm
+      .toLowerCase()
+      .split(/[\s,;\-_+|&.]+/) // Split by spaces, commas, semicolons, hyphens, underscores, plus, pipe, ampersand, period
+      .map((term) => term.trim())
+      .filter((term) => term.length > 0) // Remove empty terms
+
+    return emojiData.filter((emoji) => {
+      // Direct character match (exact emoji)
+      if (emoji.character.includes(searchTerm)) {
+        return true
+      }
+
+      const emojiNameLower = emoji.name.toLowerCase()
+      const keywordsLower = emoji.keywords.map((k) => k.toLowerCase().trim())
+
+      // Check if all search terms match either the name or any keyword
+      return searchTerms.every((term) => {
+        // Check if term matches the emoji name
+        if (emojiNameLower.includes(term)) {
+          return true
+        }
+
+        // Check if term matches any of the keywords
+        return keywordsLower.some((keyword) => keyword.includes(term))
+      })
+    })
+  }, [searchTerm, emojiData])
 
   const copyToClipboard = useCallback((text: string) => {
     navigator.clipboard
