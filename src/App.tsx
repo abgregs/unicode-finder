@@ -13,6 +13,7 @@ import {
 import { Toaster } from './components/ui/sonner'
 import { toast } from 'sonner'
 import { useDebounceCallback } from 'usehooks-ts'
+const emojiDataUrl = new URL('/emoji_data.json', import.meta.url).href
 
 type Emoji = {
   character: string
@@ -40,7 +41,7 @@ function App() {
   useEffect(() => {
     // Fetch emoji data from the JSON file
     setIsLoading(true)
-    fetch('/emoji_data.json')
+    fetch(emojiDataUrl)
       .then((response) => response.json())
       .then((data: EmojiData) => {
         setEmojiData(data.emojis)
