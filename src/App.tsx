@@ -128,7 +128,7 @@ function App() {
                 <Button
                   variant='ghost'
                   className={cn(
-                    'size-7 cursor-pointer rounded-full border-0 shadow-none ring-2 ring-transparent ring-offset-0 outline-none',
+                    'size-7 rounded-full border-0 shadow-none ring-2 ring-transparent ring-offset-0 outline-none',
                     'hover:text-foreground hover:bg-transparent hover:ring-transparent',
                     'focus:ring-transparent focus:ring-offset-0',
                     'focus-visible:ring-offset-0'
@@ -166,7 +166,7 @@ function App() {
                     aria-label={`Copy ${emoji.character} to clipboard`}
                     onClick={() => copyToClipboard(emoji.character)}
                     className={cn(
-                      'group ring-border bg-card hover:ring-accent/80 hover:bg-secondary-foreground/50 relative flex h-auto w-full cursor-pointer flex-col items-center rounded-md border-none p-4 shadow-none ring-2 ring-offset-0 transition-all outline-none',
+                      'group ring-border bg-card hover:ring-accent/80 hover:bg-secondary-foreground/50 relative flex h-auto w-full flex-col items-center rounded-md border-none p-4 shadow-none ring-2 ring-offset-0 transition-all outline-none',
                       'focus:ring-accent/80 focus:ring-2 focus:ring-offset-0',
                       'focus-visible:ring-ring/80 focus-visible:ring-2 focus-visible:ring-offset-0'
                     )}
