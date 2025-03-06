@@ -113,7 +113,7 @@ function App() {
           {/* Search Bar */}
           <div className='relative w-full max-w-md'>
             <div className='pointer-events-none absolute inset-y-0 left-3 z-10 flex items-center'>
-              <Search className='text-foreground/80 size-5' />
+              <Search className='text-secondary size-5' />
             </div>
             <Input
               ref={searchInputRef}
@@ -184,7 +184,7 @@ function App() {
                     >
                       {emoji.character}
                     </div>
-                    <CardTitle className='text-foreground/80 mb-1 w-full truncate text-center text-xs font-medium'>
+                    <CardTitle className='text-secondary mb-1 w-full truncate text-center text-xs font-medium'>
                       {emoji.name}
                     </CardTitle>
                     <CardDescription className='text-muted-foreground text-xs'>
