@@ -171,7 +171,7 @@ function App() {
                       'focus-visible:ring-ring/80 focus-visible:ring-2 focus-visible:ring-offset-0'
                     )}
                   >
-                    <div className='absolute top-2 right-2 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100'>
+                    <div className='absolute top-2 right-2 opacity-40 transition-opacity group-hover:opacity-100 group-focus:opacity-100 group-focus-visible:opacity-100'>
                       {copiedEmoji === emoji.character ? (
                         <ClipboardCheck className='text-accent/80 size-5' />
                       ) : (
